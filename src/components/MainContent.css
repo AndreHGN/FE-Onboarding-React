@@ -1,0 +1,29 @@
+.main-content {
+    border-radius: 8px;
+    border: 2px solid var(--green);
+    color: var(--lightblue);
+    display: block;
+    padding: 30px;
+    margin: 0px 5% 10vh;
+    background-color: var(--darkblue);
+    width: 90%;
+    box-shadow: 0 0 25px var(--green);
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 20px;
+}
+
+.container-line {
+    border: 1px solid var(--lightblue);
+}
+
+.grid-container {
+    display: grid;
+    margin : 20px 0px;
+    text-align: left;
+    grid-template-columns: repeat(2, 48%);
+    column-gap: 4%;
+    row-gap: 20px;
+}
