@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Este é o repositório para a segunda parte do projeto da trilha de Onboarding de Front-end. A primeira parte da trilha foi desenvolvido uma página que lista todos os episódios da série Rick and Morty usando HTML, CSS e JavaScript. Além disso, foram aplicadas duas funcionalidades: paginação e filtragem por nome. Nesta etapa da trilha deve-se refazer a página inteira, porém agora utilizando ReactJS.
+Este é o repositório para a segunda parte do projeto da trilha de Onboarding de Front-end. Na primeira parte da trilha foi desenvolvida uma página que lista todos os episódios da série Rick and Morty usando HTML, CSS e JavaScript. Além disso, foram aplicadas duas funcionalidades: paginação e filtragem por nome. Nesta parte deve-se refazer a página, porém agora utilizando ReactJS.
 
 ## Como testar
 
@@ -10,7 +10,7 @@ Ao baixar o repositório em sua máquina, abra o terminal, vá até o diretório
 
 ## Etapas
 
-Como descrito na trilha, esta parte será dividida em mais três etapas:
+Como descrito na documentação original, esta parte será dividida em mais três etapas:
 
 [Etapa 2.1 - Componentes](./docs/react/first.md)
 
@@ -21,4 +21,4 @@ Como descrito na trilha, esta parte será dividida em mais três etapas:
 ## Links:
 
 - [Repositório da primeira parte](https://github.com/AndreHGN/FE-Onboarding)
-- [Documento original da trilha](./docs/trail-intro)
+- [Documento original da trilha](./docs/trail-intro.md)
