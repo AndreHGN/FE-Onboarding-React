@@ -1,11 +1,11 @@
-import MainContent from './components/MainContent';
-import Logo from './components/Logo';
+import Body from './components/Body';
+import Header from './components/Header';
 
 function App() {
   return (
     <div className="App">
-      <Logo />
-      <MainContent />
+      <Header />
+      <Body />
     </div>
   );
 }

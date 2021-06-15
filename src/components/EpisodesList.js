@@ -1,7 +1,16 @@
-import './CardContainer.css';
+import styled from 'styled-components';
 import Card from "./Card";
 
-function CardContainer(props) {
+const EpisodesListDiv = styled.div`
+    display: grid;
+    margin : 20px 0px;
+    text-align: left;
+    grid-template-columns: repeat(2, 48%);
+    column-gap: 4%;
+    row-gap: 20px;
+`;
+
+function EpisodesList(props) {
 
     const cards = props.episodes.map( episode => {
         return (
@@ -16,10 +25,10 @@ function CardContainer(props) {
     });
 
     return (
-        <div className="card-container">
+        <EpisodesListDiv>
             {cards}
-        </div>
+        </EpisodesListDiv>
     );
 }
 
-export default CardContainer;
+export default EpisodesList;
