@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import EpisodesList from './EpisodesList';
 import GeneralInfo from './GeneralInfo';
 
-const BodyDiv = styled.div`
+const BodyStyled = styled.div`
     border-radius: 8px;
     border: 2px solid var(--green);
     color: var(--lightblue);
@@ -49,13 +49,13 @@ class Body extends React.Component {
         const episodes = [ep1, ep2];
 
         return (
-            <BodyDiv>
+            <BodyStyled>
                 <Title>LIST OF EPISODES</Title>
                 <GeneralInfo info={info} />
                 <BodyLine />
                 <EpisodesList episodes={episodes} />
                 <BodyLine />
-            </BodyDiv>
+            </BodyStyled>
         );
     }
 }

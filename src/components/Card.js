@@ -4,7 +4,7 @@ function isEven(number) {
     return number % 2 === 0;
 }
 
-const CardDiv = styled.div`
+const CardStyled = styled.div`
     border-radius: 8px;
     color: var(--darkblue);
     text-align: justify;
@@ -25,7 +25,7 @@ const CardLine = styled.hr`
     width: 100%;
 `;
 
-const NameDateDiv = styled.div`
+const NameDateContainer = styled.div`
     margin-bottom: 20px;
 `;
 
@@ -33,7 +33,7 @@ const CharactersTitle = styled.h4`
     margin-top: 20px;
 `;
 
-const CharactersDiv = styled.div`
+const CharactersContainer = styled.div`
     display: flex;
     flex-direction: row;
     max-height: 200px;
@@ -51,7 +51,6 @@ const Item = styled.li`
 
 function Card(props) {
 
-
     const charactersListEven = [];
     const charactersListOdd = [];
 
@@ -61,22 +60,22 @@ function Card(props) {
     })
 
     return (
-        <CardDiv>
-            <NameDateDiv>
+        <CardStyled>
+            <NameDateContainer>
                 <h2>{props.episode} - {props.name}</h2>
                 <p>{props.airDate}</p>
-            </NameDateDiv>
+            </NameDateContainer>
             <CardLine />
             <CharactersTitle>Characters: </CharactersTitle>
-            <CharactersDiv>
+            <CharactersContainer>
                 <List>
                     {charactersListEven}
                 </List>
                 <List>
                     {charactersListOdd}
                 </List>
-            </CharactersDiv>
-        </CardDiv>
+            </CharactersContainer>
+        </CardStyled>
     );
 }
 

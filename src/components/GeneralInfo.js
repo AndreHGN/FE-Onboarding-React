@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
-const GeneralInfoDiv = styled.div`
+const GeneralInfoStyled = styled.div`
     margin-bottom: 20px;
 `;
 
 function GeneralInfo(props) {
     return (
-        <GeneralInfoDiv>
+        <GeneralInfoStyled>
             <p>Listed episodes: {props.info.listed}</p>
             <p>Total of episodes: {props.info.total}</p>
-        </GeneralInfoDiv>
+        </GeneralInfoStyled>
     );
 }
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Card from "./Card";
 
-const EpisodesListDiv = styled.div`
+const EpisodesListStyled = styled.div`
     display: grid;
     margin : 20px 0px;
     text-align: left;
@@ -25,9 +25,9 @@ function EpisodesList(props) {
     });
 
     return (
-        <EpisodesListDiv>
+        <EpisodesListStyled>
             {cards}
-        </EpisodesListDiv>
+        </EpisodesListStyled>
     );
 }
 
