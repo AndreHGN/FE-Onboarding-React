@@ -1,8 +1,4 @@
-import styled from 'styled-components';
-
-const GeneralInfoStyled = styled.div`
-    margin-bottom: 20px;
-`;
+import { GeneralInfoStyled } from './StyledComponents';
 
 function GeneralInfo(props) {
     return (

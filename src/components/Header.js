@@ -1,12 +1,4 @@
-import styled from 'styled-components';
-
-const Logo = styled.img`
-    display: block;
-    margin: auto;
-    height: auto;
-    width: 500px;
-    margin-bottom: 60px;
-`;
+import { Logo } from './StyledComponents';
 
 function Header() {
     return (
