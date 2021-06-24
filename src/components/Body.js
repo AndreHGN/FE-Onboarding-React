@@ -4,43 +4,77 @@ import EpisodesList from './EpisodesList';
 import GeneralInfo from './GeneralInfo';
 import Pagination from './Pagination';
 import Filter from './Filter';
+import getData from '../mockData';
 
 class Body extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            currentPage: 1,
+            filter: "",
+        }
+    }
+
+    goToPreviousPage() {
+        const page = this.state.currentPage;
+        if (page > 1) {
+            const updatedPage = page - 1;
+            this.setState({
+                currentPage: updatedPage,
+                filter: this.state.filter,
+            });
+        } 
+        else alert("There is no more previous pages.");
+    }
+
+    goToNextPage(maxPage) {
+        const page = this.state.currentPage;
+        if (page < maxPage) {
+            const updatedPage = page + 1;
+            this.setState({
+                currentPage: updatedPage,
+                filter: this.state.filter,
+            });
+        } 
+        else alert("There is no more previous pages.");
+    }
+
+    goToPageNumber(pageNumber) {
+        this.setState({
+            currentPage: pageNumber,
+            filter: this.state.filter,
+        });
+    }
+
+    filterByName(input) {
+        this.setState({
+            currentPage: 1,
+            filter: input,
+        });
+    }
 
     render() {
 
-        const ep1 = {
-            episode: "S01E01",
-            name: "Pilot",
-            airDate: "December 2, 2013",
-            characters: ["Rick Sanchez", "Morty Smith", "Beth Smith", "Jerry Smith", "Summer Smith"],
-        };
+        const data = getData(this.state.currentPage, this.state.filter);
 
-        const ep2 = {
-            episode: "S01E02",
-            name: "Lawnmower Dog",
-            airDate: "December 9, 2013",
-            characters: ["Rick Sanchez", "Morty Smith", "Beth Smith", "Jerry Smith", "Creepy Little Girl"],
-        };
-
-        const info = {
-            listed: 2,
-            total: 41,
-            maxPage: 3,
-        };
-
-        const episodes = [ep1, ep2];
+        const pagination = <Pagination
+                                currentPage={this.state.currentPage}
+                                maxPage={data.info.maxPage}
+                                goToPrev={() => this.goToPreviousPage()}
+                                goToNext={() => this.goToNextPage(data.info.maxPage)}
+                                goToNumb={(number) => this.goToPageNumber(number)}
+                            />
 
         return (
             <BodyStyled>
                 <BodyTitle>LIST OF EPISODES</BodyTitle>
-                <GeneralInfo info={info} />
-                <Filter />
-                <Pagination maxPage={info.maxPage} />
+                <GeneralInfo listed={data.episodes.length} total={data.info.total} />
+                <Filter onClick={(input) => this.filterByName(input)}/>
+                {pagination}
                 <BodyLine />
-                <EpisodesList episodes={episodes} />
+                <EpisodesList episodes={data.episodes} />
                 <BodyLine />
-                <Pagination maxPage={info.maxPage} />
+                {pagination}
             </BodyStyled>
         );
     }

@@ -4,15 +4,26 @@ function Pagination(props) {
     const numericButtons = Array(props.maxPage).fill().map((_, index) => {
         const pageNumber = index + 1;
         return (
-            <Button key={pageNumber} type="numeric"> {pageNumber} </Button>
+            <Button
+                className={props.currentPage === pageNumber && "selected"}
+                key={pageNumber}
+                type="numeric"
+                onClick={() => props.goToNumb(pageNumber)}
+            >
+                {pageNumber}
+            </Button>
         );
     });
 
     return (
         <PaginationStyled>
-            <Button>Previous</Button>
+            <Button onClick={props.goToPrev}>
+                Previous
+            </Button>
             {numericButtons}
-            <Button>Next</Button>
+            <Button onClick={props.goToNext}>
+                Next
+            </Button>
         </PaginationStyled>       
     );
 }

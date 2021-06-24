@@ -3,8 +3,8 @@ import { GeneralInfoStyled } from './StyledComponents';
 function GeneralInfo(props) {
     return (
         <GeneralInfoStyled>
-            <p>Listed episodes: {props.info.listed}</p>
-            <p>Total of episodes: {props.info.total}</p>
+            <p>Listed episodes: {props.listed}</p>
+            <p>Total of episodes: {props.total}</p>
         </GeneralInfoStyled>
     );
 }

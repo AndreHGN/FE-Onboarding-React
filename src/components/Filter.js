@@ -1,13 +1,21 @@
 import { FilterBar, Button } from './StyledComponents';
 
-function Filter() {
+function Filter(props) {
+    let filterInput;
+
     return (
         <div>
             <FilterBar 
                 type="text" 
-                placeholder="Filter by name" 
+                placeholder="Filter by name"
+                onChange={evt => filterInput = evt.target.value} 
             />
-            <Button type="filter">Filter</Button>
+            <Button
+                type="filter"
+                onClick={() => props.onClick(filterInput)}
+            >
+                Filter
+            </Button>
         </div>
     );
 }

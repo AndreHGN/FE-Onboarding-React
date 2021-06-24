@@ -105,6 +105,11 @@ export const Button = styled.button`
         background-color: var(--lightblue);
     }
 
+    &.selected {
+        color: var(--darkblue);
+        background-color: var(--lightblue);
+    }
+
     margin: ${props => props.type === "filter" ? "0px 2px" : "20px 2px"};
     width: ${props => props.type === "numeric" ? "50px" : "100px"};
 `;
