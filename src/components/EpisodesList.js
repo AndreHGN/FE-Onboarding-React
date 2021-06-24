@@ -1,14 +1,5 @@
-import styled from 'styled-components';
+import { EpisodesListStyled } from './StyledComponents';
 import Card from "./Card";
-
-const EpisodesListStyled = styled.div`
-    display: grid;
-    margin : 20px 0px;
-    text-align: left;
-    grid-template-columns: repeat(2, 48%);
-    column-gap: 4%;
-    row-gap: 20px;
-`;
 
 function EpisodesList(props) {
 
