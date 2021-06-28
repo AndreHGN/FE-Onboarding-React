@@ -16,9 +16,8 @@ class Body extends React.Component {
     }
 
     goToPreviousPage() {
-        const page = this.state.currentPage;
-        if (page > 1) {
-            const updatedPage = page - 1;
+        if (this.state.currentPage > 1) {
+            const updatedPage = this.state.currentPage - 1;
             this.setState({
                 currentPage: updatedPage,
                 filter: this.state.filter,
@@ -28,9 +27,8 @@ class Body extends React.Component {
     }
 
     goToNextPage(maxPage) {
-        const page = this.state.currentPage;
-        if (page < maxPage) {
-            const updatedPage = page + 1;
+        if (this.state.currentPage < maxPage) {
+            const updatedPage = this.state.currentPage + 1;
             this.setState({
                 currentPage: updatedPage,
                 filter: this.state.filter,
