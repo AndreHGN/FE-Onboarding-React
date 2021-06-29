@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const BodyStyled = styled.div`
     border-radius: 8px;
@@ -76,7 +76,7 @@ export const EpisodesListStyled = styled.div`
 `;
 
 export const GeneralInfoStyled = styled.div`
-    margin-bottom: 20px;
+    margin: 20px 0px;
 `;
 
 export const Logo = styled.img`
@@ -137,4 +137,70 @@ export const FilterBar = styled.input`
 export const PaginationStyled = styled.div`
     display: flex;
     justify-content: center;
+`;
+
+const spin = keyframes`
+    0% { transform: rotate(0deg); }
+    50% { box-shadow: 0 0 20px var(--green); }
+    100% { transform: rotate(360deg); }
+`; 
+
+export const Loader = styled.div`
+    margin: 40px auto;
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid var(--lightblue);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: ${spin} 1s linear infinite;
+`;
+
+const dotFlashing = keyframes`
+    0% { background-color: var(--lightblue); }
+    100% { background-color: var(--darkblue); }
+`;
+
+export const SmallLoader = styled.div`
+    margin: 28px auto;
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--lightblue);
+    color: var(--lightblue);
+    animation: ${dotFlashing} .4s infinite linear alternate;
+    animation-delay: .2s;
+
+    &::before, &::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 0;
+    }
+
+    &::before {
+        left: -15px;
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        background-color: var(--lightblue);
+        color: var(--lightblue);
+        animation: dotFlashing .4s infinite alternate;
+        animation-delay: 0s;
+    }
+
+    &::after {
+        left: 15px;
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        background-color: var(--lightblue);
+        color: var(--lightblue);
+        animation: dotFlashing .4s infinite alternate;
+        animation-delay: .4s;
+    }
+`;
+
+export const Error = styled.h2`
+    margin: 20px;
 `;

@@ -1,24 +1,28 @@
-import { EpisodesListStyled } from './StyledComponents';
+import { EpisodesListStyled, Error } from './StyledComponents';
 import Card from "./Card";
 
 function EpisodesList(props) {
 
-    const cards = props.episodes.map( episode => {
+    const cards = props.episodes?.map( episode => {
         return (
             <Card
-                key={episode.episode}
+                key={episode.id}
                 episode={episode.episode}
                 name={episode.name}
-                airDate={episode.airDate}
+                airDate={episode.air_date}
                 characters={episode.characters}
             />
         );
     });
 
     return (
-        <EpisodesListStyled>
-            {cards}
-        </EpisodesListStyled>
+        props.episodes ? (
+            <EpisodesListStyled>
+                {cards}
+            </EpisodesListStyled>
+        ) : (
+            <Error>Not found</Error>
+        )
     );
 }
 
