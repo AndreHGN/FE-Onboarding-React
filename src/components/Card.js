@@ -19,7 +19,7 @@ function Card(props) {
 
     props.characters.forEach((character, index) => {
         const list = isEven(index) ? charactersListEven : charactersListOdd;
-        list.push(<Item key={index}>{character}</Item>);
+        list.push(<Item key={character.id}>{character.name}</Item>);
     })
 
     return (
